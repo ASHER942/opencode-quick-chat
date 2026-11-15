@@ -1,5 +1,7 @@
 # opencode-quick-chat
 
+[![CI](https://github.com/ASHER942/opencode-quick-chat/actions/workflows/ci.yml/badge.svg)](https://github.com/ASHER942/opencode-quick-chat/actions/workflows/ci.yml)
+
 Quick chat overlay and side panel for **OpenCode Desktop**.
 
 A floating chat you can summon from anywhere, a side panel for longer conversations, and a one-click handoff to a full model when an idea is worth building.

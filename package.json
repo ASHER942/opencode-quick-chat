@@ -6,6 +6,14 @@
   "type": "module",
   "license": "MIT",
   "author": "opencode-quick-chat contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ASHER942/opencode-quick-chat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ASHER942/opencode-quick-chat/issues"
+  },
+  "homepage": "https://github.com/ASHER942/opencode-quick-chat#readme",
   "keywords": [
     "opencode",
     "opencode-plugin",

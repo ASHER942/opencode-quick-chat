@@ -355,41 +355,45 @@ opencode api get "/api/agent?location[directory]=<项目目录>"
 
 ## 11. 发布到 GitHub
 
-仓库目前**还没有创建**。推荐步骤：
+仓库已发布：**https://github.com/ASHER942/opencode-quick-chat**（public，默认分支 `main`）
+
+- 版本 tag：`v0.1.0`
+- CI：`.github/workflows/ci.yml` —— `npm ci` → `npm run typecheck` → `npm run build`，并把 `dist/gui-experimental.cjs` 作为 `gui-experimental` artifact 上传
+- 提交作者使用 GitHub noreply：`345882879+ASHER942@users.noreply.github.com`（不暴露真实邮箱）
+- 仓库里没有 `dist/`、`node_modules/`、日志、凭据
+
+后续发版：
 
 ```sh
-# 在插件目录
-git init -b main
-git add .
-git commit -m "feat: quick chat overlay and side panel for OpenCode Desktop"
-
-# 先在 GitHub 网页创建一个空仓库（不要勾 README / .gitignore / license）
-git remote add origin https://github.com/<owner>/opencode-quick-chat.git
-git push -u origin main
+git add -A
+git commit -m "..."
+git push
+git tag -a v0.1.1 -m "v0.1.1"
+git push origin v0.1.1
 ```
 
-认证方式（三选一，**不要用账号密码**，GitHub 早已不接受）：
+认证方式（**不要用账号密码**，GitHub 早已不接受）：
 
-1. 安装 GitHub CLI 后 `gh auth login`，再 `gh repo create opencode-quick-chat --public --source . --push`
-2. 直接用 Git Credential Manager 的浏览器登录（Git for Windows 自带，第一次 `git push` 会弹）
+1. Git Credential Manager 的浏览器登录（当前使用，凭据在系统凭据管理器里）
+2. 安装 GitHub CLI 后 `gh auth login`
 3. 细粒度 PAT，只放到系统凭据管理器 / 环境变量里
 
-发布前检查：
+每次发版前检查：
 
 - `git status` 里没有 `node_modules/`、`dist/`、`.env`、日志、个人绝对路径
-- `README.md` 里没有本机用户名、邮箱、token
-- 选择公开 / 私有；公开前确认 license 和截图（目前没有截图）
+- `README.md` / commit 里没有本机用户名、真实邮箱、token
 - 建议仓库描述：`Quick chat overlay and side panel for OpenCode Desktop`
-- 建议 topics：`opencode`, `opencode-plugin`, `solidjs`, `vite`, `ai-chat`
+- 建议 topics：`opencode`, `opencode-plugin`, `opencode-desktop`, `quick-chat`, `solidjs`
 
 ## 12. 交接清单
 
-- [ ] `npm install && npm run typecheck && npm run build` 通过
+- [x] `npm install && npm run typecheck && npm run build` 通过
 - [ ] 按第 7.3 节走一遍 UI
 - [ ] 确认 `chat` agent 和 `globalBind` 配置符合你的习惯
-- [ ] 决定仓库名 / 公开或私有 / 作者署名（commit email）
-- [ ] 创建 GitHub 仓库并 push
-- [ ] 补一张浮层截图到 README（可选）
+- [x] 仓库名 / 可见性 / 作者署名（`ASHER942`，public，noreply 邮箱）
+- [x] 创建 GitHub 仓库并 push
+- [x] CI：typecheck + build + artifact
+- [ ] 补一张浮层截图到 README
 - [ ] 把本文件里「已验证 / 未验证」更新成实际情况
 
 ---
