@@ -1,0 +1,40 @@
+{
+  "name": "opencode-quick-chat",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Quick chat overlay and side panel for OpenCode Desktop",
+  "type": "module",
+  "license": "MIT",
+  "author": "opencode-quick-chat contributors",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "opencode-desktop",
+    "quick-chat",
+    "chat",
+    "solidjs"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "exports": {
+    "./gui-experimental": "./dist/gui-experimental.cjs"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@opencode/client": "2.2.2",
+    "@opencode/plugin": "2.2.2",
+    "effect": "4.0.6",
+    "solid-js": "^1.9.0",
+    "typescript": "^5.7.2",
+    "vite": "^7.0.0",
+    "vite-plugin-solid": "^2.11.0"
+  }
+}
